@@ -14,7 +14,7 @@ class searchAPI extends Component {
     }
   }
 
-  //function for what happens when you input the zip code
+  //function for what happens when you input the brand
   handleInputChange = (event) => {
     this.setState({ userInput: event.target.value});
   }
@@ -46,16 +46,17 @@ class searchAPI extends Component {
         return table;
     } else {
         for (let i = 0; i < currData.length; i++) {
+          console.log(this.state.apiData);
           table.push(
             <tbody>
             <tr key={currData[i].id}>
             <td>
             <ul>
-            <td> {currData[i].name}</td>
-            <li>Brand: {currData[i].brand}</li>
-            <li>ProductType: {currData[i].product_type}</li>
-            <li>Price: {currData[i].price_sign}{currData[i].price}</li>
-            <li>{currData[i].image_link}</li>
+            <img src={currData[i].image_link}></img>
+            <td><b>{currData[i].name}</b> </td>
+            <p>Brand: {currData[i].brand}</p>
+            <p>ProductType: {currData[i].product_type}</p>
+            <p>Price: {currData[i].price_sign}{currData[i].price}</p>
             </ul>
             </td>
             </tr>
