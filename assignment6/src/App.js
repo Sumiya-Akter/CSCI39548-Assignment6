@@ -54,7 +54,6 @@ class searchAPI extends Component {
             <td> {currData[i].name}</td>
             <li>Brand: {currData[i].brand}</li>
             <li>ProductType: {currData[i].product_type}</li>
-            <li>Price: {currData[i].price}</li>
             </ul>
             </td>
             </tr>
@@ -69,7 +68,7 @@ class searchAPI extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h3>Makeup Search: </h3>
+          <h3>Search By Makeup Brand: </h3>
           <input type="text" value={this.state.userInput} placeholder="Search Field" onChange={this.handleInputChange}/>
           <button className="search-makeup" onClick={this.handleSearchClick}>Search</button>
         </div>
