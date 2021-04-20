@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 
 
-//creates array for api data, an open string for City and state is set to false until found
+//creates array for api data, an open string for userInput and state is set to false until found
 class searchAPI extends Component {
   constructor(props) {
     super(props);
@@ -21,8 +21,8 @@ class searchAPI extends Component {
 
 //function for what happens when you click the search button
   handleSearchClick = async() => {
-    let TypedInput = this.state.Zip;
-    let linkToAPI = 'https://makeup-api.herokuapp.com/api/v1/products.json?/' + TypedInput;
+    let TypedInput = this.state.userInput;
+    let linkToAPI = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=' + TypedInput;
     console.log(this.state.userInput);
     try {
       let response = await axios.get(linkToAPI);
@@ -51,7 +51,7 @@ class searchAPI extends Component {
             <tr key={currData[i].id}>
             <td>
             <ul>
-            <td> {currData[i].brand}, {currData[i].product_type}</td>
+            <td> {currData[i].name}</td>
             <li>Brand: {currData[i].brand}</li>
             <li>ProductType: {currData[i].product_type}</li>
             </ul>
@@ -68,9 +68,9 @@ class searchAPI extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h3>Makeup Search: </h3>
+          <h3>Search By Makeup Brand: </h3>
           <input type="text" value={this.state.userInput} placeholder="Search Field" onChange={this.handleInputChange}/>
-          <button className="search-zip" onClick={this.handleSearchClick}>Search</button>
+          <button className="search-makeup" onClick={this.handleSearchClick}>Search</button>
         </div>
         <br/>
           <table id="data">
