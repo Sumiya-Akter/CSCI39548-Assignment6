@@ -54,6 +54,8 @@ class searchAPI extends Component {
             <td> {currData[i].name}</td>
             <li>Brand: {currData[i].brand}</li>
             <li>ProductType: {currData[i].product_type}</li>
+            <li>Price: {currData[i].price_sign}{currData[i].price}</li>
+            <li>{currData[i].image_link}</li>
             </ul>
             </td>
             </tr>
