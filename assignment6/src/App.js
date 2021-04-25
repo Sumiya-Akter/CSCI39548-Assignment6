@@ -49,14 +49,14 @@ class searchAPI extends Component {
           console.log(this.state.apiData);
           table.push(
             <tbody>
-              <tr key={currData[i].id}>
-                <td>
-                  <ul>
+              <tr class="tRow" key={currData[i].id}>
+                <td class="tableD">
+                  <ul class="tItem">
                     <img src={currData[i].image_link}></img>
                     <td><b>{currData[i].name}</b> </td>
-                    <p>Brand: {currData[i].brand}</p>
-                    <p>ProductType: {currData[i].product_type}</p>
-                    <p>Price: {currData[i].price_sign}{currData[i].price}</p>
+                    <p><b>Brand:</b> {currData[i].brand}<br/>
+                    <b>Product Type:</b> {currData[i].product_type}<br/>
+                    <b>Price:</b> ${currData[i].price_sign}{currData[i].price}</p>
                   </ul>
                 </td>
               </tr>
