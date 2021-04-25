@@ -52,3 +52,15 @@ tbody {
   display: flex;
   flex-wrap: wrap;
 }
+
+tr {
+  display: flex;
+}
+
+td {
+  width: 325px;
+}
+
+ul {
+  justify-content: space-between;
+}
